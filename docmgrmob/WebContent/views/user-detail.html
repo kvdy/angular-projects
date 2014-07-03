@@ -1,0 +1,45 @@
+<ion-view title="user.title"> <ion-header-bar
+	class="bar-assertive" ng-controller="AppController">
+<div class="buttons">
+	<button ng-click="goBack()"
+		class="button button-icon icon ion-ios7-arrow-back"></button>
+</div>
+<h1 class="title">{{ user.userVO.userName }}</h1>
+</ion-header-bar>
+
+<ion-content padding="true" ng-class="stylemodeClass">
+
+<div class="list card">
+	<div class="item item-avatar">
+		<img src="assets/img/user_default.png">
+		<h2>{{ user.userVO.firstName }} {{ user.userVO.lastName }}</h2>
+		<p>{{ user.userVO.emailAddress }}</p>
+	</div>
+        
+	<div class="item item-body">
+		<div class="col col-90">
+			<h4>GROUPS</h4>
+			<hr>
+			<div ng-show='grpAvlFlg' ng-repeat="grp in groups">
+				<p> <i class="icon ion-android-friends"></i> {{grp.groupVO.name }}</p>
+				<hr class="subdued">
+			</div>
+			<p ng-hide='grpAvlFlg'>{{ 'No groups assigned' }}</p>
+		</div>
+	</div>
+</div>
+</ion-content>
+
+
+<!-- 
+<div class="bar bar-footer">
+        <div class="button-bar">
+            <button ng-click="zoomInText()" class="button icon ion-minus"></button>
+            <button ng-click="zoomOutText()" class="button icon ion-plus"></button>
+            <button ng-click="changeStyle()" class="button icon ion-contrast"></button>
+            <button ng-click="fullscreen()" class="button icon ion-arrow-expand"></button>
+            <button ng-click="chapters()" class="button icon ion-bookmark"></button>
+        </div> 
+</div>
+-->
+</ion-view>

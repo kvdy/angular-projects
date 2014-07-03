@@ -1,0 +1,7 @@
+<ion-content ng-controller="GroupDetailController">
+	<ion-list>
+	    <ion-item ng-repeat="usr in usrsNotInGroup" type="item-text-wrap">
+	        <h3>{{usr.userVO.firstName}} {{usr.userVO.lastName}}</h3>
+	    </ion-item>
+	</ion-list>
+</ion-content>

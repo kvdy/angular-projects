@@ -1,0 +1,18 @@
+<ion-view title="user.title" class='fancy-select-items modal'> <ion-header-bar
+	class="bar-assertive">
+<h1 class="title">Add Users</h1>
+<div class="buttons">
+	<button ng-click="onOk()"
+		class="button button-icon icon ion-checkmark"></button>
+</div>
+</ion-header-bar>
+
+<ion-content padding="true" ng-class="stylemodeClass">
+	<!-- Allow multiple selections and overwrite the default checkmark icon -->
+	<tick-list multiple="true" selected-icon="ion-checkmark-circled">
+	    <tick-list-item ng-repeat="item in consolidatedUsers" selected="{{item.selected}}" selected-icon="{{item.icon}}" model="item" on-change="onItemChanged(item)">{{item.user.userVO.firstName}}</tick-list-item>
+	</tick-list>
+	
+</ion-content>
+
+</ion-view>

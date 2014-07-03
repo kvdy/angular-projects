@@ -1,0 +1,33 @@
+<ion-view>
+    <ion-header-bar class="bar-assertive" ng-controller="AppController">
+        <div class="buttons">
+            <button ng-click="openLeftPanel()" class="button button-icon icon ion-navicon"></button>
+        </div>
+        <h1 class="title">{{'users' | translate}}</h1>
+        <div class="buttons">
+	        <button ng-click="goToPage('user-add')" class="button button-icon icon ion-ios7-plus"</button>
+		</div>        
+    </ion-header-bar>
+
+    <ion-content start-y="55">
+
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" ng-model="searchString" placeholder="{{ 'search' | translate }}">
+            </label>
+            <button class="button button-clear" ng-if="searchString" ng-click="clearFilter()">
+                <i class="icon ion-close-circled" ></i>
+            </button>
+        </div>
+
+        <ion-list>
+            <ion-item ng-repeat="usr in users | filter:searchString" type="item-text-wrap" href="#/user/{{usr.userVO.id}}">
+                <h3><i class="icon ion-person"></i> {{usr.userVO.firstName}} {{usr.userVO.lastName}}</h3>
+                <p>{{usr.userVO.userType}}</p>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

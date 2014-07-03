@@ -1,0 +1,69 @@
+<ion-view title="user.title"> <ion-header-bar
+	class="bar-assertive" ng-controller="AppController">
+<div class="buttons">
+	<button ng-click="goBack()"
+		class="button button-icon icon ion-ios7-arrow-back"></button>
+</div>
+<h1 class="title">{{ 'Add User' }}</h1>
+</ion-header-bar>
+
+<ion-content padding="true" ng-class="stylemodeClass" ng-controller='UserAddController'>
+	<div class="list">
+		<form action="">
+		<label class="item item-input">
+		    <span class="input-label">Username</span>
+		    <input type="text" ng-model='user.userVO.userName'>
+		</label>
+		<label class="item item-input">
+		    <span class="input-label">First Name</span>
+		    <input type="text" ng-model='user.userVO.firstName'>
+		</label>
+		<label class="item item-input">
+		    <span class="input-label">Last Name</span>
+		    <input type="text" ng-model='user.userVO.lastName'>
+		</label>
+		<label class="item item-input">
+		    <span class="input-label">Email Address</span>
+		    <input type="email" ng-model='user.userVO.emailAddress'>
+		</label>
+		<label class="item item-input">
+		    <span class="input-label">Contact Number 1</span>
+		    <input type="text" ng-model='user.userVO.contactNumber1'>
+		</label>
+		<label class="item item-input">
+		    <span class="input-label">Contact Number 2</span>
+		    <input type="text" ng-model='user.userVO.contactNumber2'>
+		</label>
+		<label class="item item-input item-select">
+		    <span class="input-label">User Type</span>
+		    <select ng-model='user.userVO.userType'>
+		    	<option value="Internal">Internal</option>
+		    	<option value="External">External</option>
+		    	<option value="Admin">Admin</option>
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+		    <span class="input-label">User Status</span>
+		    <select ng-model='user.userVO.userStatus'>
+		    	<option value="Active">Active</option>
+		    	<option value="Inactive">Inactive</option>
+		    </select>
+		</label>
+		<label class="item item-input">
+		    <span class="input-label">Password Exp.Days</span>
+		    <input type="number" ng-model='user.userVO.passwordExpirationDays'>
+		</label>
+		<label class="item item-input">
+		    <span class="input-label">Password</span>
+		    <input type="password" ng-model='user.userVO.password'>
+		</label>
+		</form>
+	</div>
+	<button class="button button-block button-assertive" ng-click='user.addUser()'>
+	  Submit
+	</button>
+
+</ion-content>
+
+
+</ion-view>

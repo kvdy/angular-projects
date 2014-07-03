@@ -1,0 +1,20 @@
+<ion-view title="docmgr" hide-back-button="true"
+	style="background: #EF4E3A" hide-nav-bar="true"> <ion-content
+	has-header="true" padding="true" ng-controller='LoginController'>
+ 	<div style="border:none;margin-top:50px;">
+                <img src="assets/img/doc-logo.png"/>
+            </div>
+
+	<div class="list list-inset" style="background: #EF4E3A;">
+		<form action=''>
+		<label class="item item-input"> <input type="text"
+			placeholder="Username" ng-model='user.userVO.userName'>
+		</label> <label class="item item-input"> <input type="password"
+			placeholder="Password" ng-model='user.userVO.password'>
+		</label>
+		</form>
+		<button class="button button-block button-light" ng-click='user.login()'>
+		  login
+		</button>
+	</div>
+</ion-content> </ion-view>
